@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "dsds",
+      "image": "dsdsd",
+      "price": "dsd"
+    }
+  ],
+  "categories": [
+    {
+      "name": "dsds",
+      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcategory-1.jpg?alt=media&token=29f0e338-6eae-4648-861a-40651f85fad2",
+      "id": 8
+    }
+  ]
+}

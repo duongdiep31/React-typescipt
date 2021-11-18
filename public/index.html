@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="%PUBLIC_URL%/icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  
+    <title>React App</title>
+  
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/bootstrap-select/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/owl.carousel2/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/owl.carousel2/assets/owl.theme.default.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/custom.css">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/img/favicon.png">
+
+      <!-- admin -->
+
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    
+    <script src="%PUBLIC_URL%/vendor/jquery/jquery.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/lightbox2/js/lightbox.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/nouislider/nouislider.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/owl.carousel2/owl.carousel.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+    <script src="%PUBLIC_URL%/js/front.js"></script>
+    <script>
+
+      // admin
+
+
+
+
+      
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+      
+    </script>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    
+  </body>
+</html>
