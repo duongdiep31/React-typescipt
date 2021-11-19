@@ -4,11 +4,11 @@ export const getAll = () => {
     const url = '/products/'
     return instance.get(url)
 }
-export const get = (id:Number) => {
-    const url = `/products/${id}`
+export const get = (id:any) => {
+    const url = `/products/` + id
     return instance.get(url)
 }
-export const remove = (id:Number) => {
+export const remove = (id:number) => {
     const url = `/products/${id}`
     return instance.delete(url)
 }

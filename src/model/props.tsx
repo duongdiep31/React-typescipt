@@ -2,7 +2,8 @@ export interface IProduct {
     id: number;
     name: string;
     image: string;
-    price: number;
+    description: String;
+    price: Number;
   }
   export interface ICategory {
     id: Number

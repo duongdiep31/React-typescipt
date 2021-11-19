@@ -16,14 +16,7 @@
   "profile": {
     "name": "typicode"
   },
-  "products": [
-    {
-      "id": 1,
-      "name": "dsds",
-      "image": "dsdsd",
-      "price": "dsd"
-    }
-  ],
+  "products": [],
   "categories": [
     {
       "name": "CLOTHES",
@@ -36,14 +29,11 @@
       "id": 2
     },
     {
-      "name": "WATCHES",
-      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcat-img-3.jpg?alt=media&token=605e3b8b-6826-47e1-8897-5485bf533e54",
-      "id": 3
-    },
-    {
-      "name": "ELECTRONICS",
-      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcat-img-4.jpg?alt=media&token=f19e92ab-f884-4d05-af4d-b3e83e1bc317",
-      "id": 4
+      "name": "dsdsddsa",
+      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcategory-2.jpg?alt=media&token=ce707745-a6a6-4396-85d9-69496babcec4",
+      "id": 3,
+      "price": "260000002",
+      "description": "dsd"
     }
   ]
 }

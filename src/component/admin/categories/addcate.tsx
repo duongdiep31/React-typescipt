@@ -51,7 +51,6 @@ type Props = {
     const onSubmit: SubmitHandler<FormValues> = (category) => {
       
                 category.image = data
-             console.log(category);
 
                 props.onAddcate(category)    
       navigate("/admin/category" , {replace:true})

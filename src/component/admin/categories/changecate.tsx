@@ -30,6 +30,7 @@ type Props = {
   
   const Changecate: React.FC<Props> = (props) => {
     const { id } = useParams();
+    
     const {register, handleSubmit, formState: { errors }, reset} = useForm<FormValues>({ resolver });
     const navigate = useNavigate()
     const [data,setdata] = useState('')
@@ -51,7 +52,8 @@ type Props = {
                 const length = url.target.files.length
                   console.log(url);
                   
-                  if (length == 0) {
+                  if (length ===
+                     0) {
                       return data
                   }else{                  
                 
@@ -89,7 +91,8 @@ type Props = {
            <input onChange={handleImage} className="form-control" id="image" type="file"  />
          </div>
         <div>
-          <img style={
+          <img
+          alt={'...'} style={
             {
               width: '20%',
               height: '20%',

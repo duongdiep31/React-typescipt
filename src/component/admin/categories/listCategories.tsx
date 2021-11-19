@@ -16,37 +16,23 @@ const ListCategories: React.FC<Props> = (props ) => {
                 <tr>
               <td>{index +1}</td>
               <td>{item.name}</td>
-              <td style ={{width:'20%', height:'20%'}} ><img src ={item.image} style ={{width: '100%',height:'20%'}} /></td>
-
-              <td>
-                <Link style={
-                  {
-                    borderRadius: "20px"
-                  }
-                } to={`/admin/changecate/${item.id}`}
-                
-                
-                id="change" 
-                className="btn btn-success shadow btn-xs sharp mr-1"
-                >
+              <td style ={{width:'20%', height:'20%'}} >
+                <img src ={item.image} alt= {'...'} style ={{width: '100%',height: '20%'}} /></td>
+              <td><Link style={{borderRadius: "20px"}} to={`/admin/changecate/${item.id}`}id="change" className="btn btn-success shadow btn-xs sharp mr-1" >
                   <i className="fas fa-pencil-alt"></i></Link>
                 <button
                     onClick={() => props.onRemove(item.id)}
                   style={{
                     borderRadius: '20px',
                     backgroundColor: '#AA0000'
-                  }}
-                     
+                  }} 
                   id="remove" 
               
                 className="btn btn-danger shadow btn-xs sharp"><i className="fa fa-trash"></i></button>
               </td>
-            </tr></React.Fragment>
-             
-
-            )
-
-        })
+            </tr>
+            </React.Fragment>
+            )})
 
 
   return (

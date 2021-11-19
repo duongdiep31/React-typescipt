@@ -17,6 +17,6 @@ export const insertcate = (category: ICategory) => {
     return instance.post(url, category)
 }
 export const updatecate = (id:Number, category: ICategory) => {
-    const url = `/categories/${id}`;
+    const url = `/categories/${ id}`;
     return instance.patch(url, category)
 }

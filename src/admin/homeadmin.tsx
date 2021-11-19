@@ -23,7 +23,7 @@ const Homeadmin: React.FC<Props> = (props) => {
                                             <Link className="nav-link" to="/admin/category">Category</Link>
                                         </li>
                                         <li className="list-group-item">
-                                            <Link className="nav-link" to="/admin/product">Product</Link>
+                                            <Link className="nav-link" to="/admin/products">Product</Link>
                                         </li>
                                         <li className="list-group-item">
                                             <Link className="nav-link" to={`/profile/update/`}>Update Profile</Link>
