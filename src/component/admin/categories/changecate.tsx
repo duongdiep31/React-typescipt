@@ -49,6 +49,7 @@ type Props = {
 
                 const storage = getStorage()
                 const length = url.target.files.length
+                  console.log(url);
                   
                   if (length == 0) {
                       return data
@@ -87,7 +88,15 @@ type Props = {
            <label htmlFor="image">Image</label>
            <input onChange={handleImage} className="form-control" id="image" type="file"  />
          </div>
-       
+        <div>
+          <img style={
+            {
+              width: '20%',
+              height: '20%',
+              marginBottom: '20px'
+            }
+          } src= {data} />
+        </div>
          <button disabled={!data} className="btn btn-primary" type="submit">Submit</button>
        </fieldset>
      </form>

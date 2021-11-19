@@ -16,7 +16,7 @@ const ListCategories: React.FC<Props> = (props ) => {
                 <tr>
               <td>{index +1}</td>
               <td>{item.name}</td>
-              <td>Are formatted like this</td>
+              <td style ={{width:'20%', height:'20%'}} ><img src ={item.image} style ={{width: '100%',height:'20%'}} /></td>
 
               <td>
                 <Link style={

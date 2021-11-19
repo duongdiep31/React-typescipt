@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getAllcate, insertcate, removecate, updatecate } from './api/categories';
-import './App.css';
 import Routers from './Routers';
 import { ICategory, IProduct} from './model/props'
 import {AxiosResponse} from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
   function App() {
     const [products, setProducts] = useState<IProduct[]>([])
@@ -35,32 +36,52 @@ import {AxiosResponse} from 'axios'
       getCategories()
     },[])
     const onHandleAddcate = (category: ICategory) => {
-  
-      insertcate(category).then((response: AxiosResponse) => {
-        // cập nhật lại state product để hiển thị ra màn hình kết quả mới
-        setCategories([...categories, response.data]);
-      });
+            try {
+              insertcate(category).then((response: AxiosResponse) => {
+                // cập nhật lại state product để hiển thị ra màn hình kết quả mới
+                setCategories([...categories, response.data]);
+                toast.success("Thêm danh mục thành công")
+              });
+            } catch (error) {
+                  toast.error('Không thành công')
+            }
+      
     };
 
     const onHandleRemove = (id: Number) => {
-      removecate(id)
+      try {
+        removecate(id)
         setCategories(categories.filter(item =>item.id !== id))
+        toast.success('Xoá thành công')
+      } catch (error) {
+            toast.error('Xoá không thành công')
+      }
+    
     };
     
     const onHandleChange = (category :ICategory) => {
-
-
+              
+          try {
+              updatecate(category.id,category)
+              .then((response: AxiosResponse) => {
+                const newcate = categories.map(item => item.id === response.data.id ? response.data : item)
+                setCategories(newcate)
+                toast.success('Sửa thành công')
+              }  )
+          } catch (error) {
+            toast.error('Thất Bại')
+          }
           
     }
   return (
     <div  id='wapper' >
-            
       <Routers products={products}
        categories = {categories}
         onAddcate ={onHandleAddcate}
         onRemove={onHandleRemove}
         onChangecate ={onHandleChange}
            /> 
+      <ToastContainer />
 
     </div>
   );

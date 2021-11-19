@@ -26,9 +26,24 @@
   ],
   "categories": [
     {
-      "name": "dsds",
-      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcategory-1.jpg?alt=media&token=29f0e338-6eae-4648-861a-40651f85fad2",
-      "id": 8
+      "name": "CLOTHES",
+      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcat-img-1.jpg?alt=media&token=7625192a-4dd8-477d-84fc-75940a3cb70c",
+      "id": 1
+    },
+    {
+      "name": "SHOES",
+      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcat-img-2.jpg?alt=media&token=33950399-965b-4328-98ae-c697992acf24",
+      "id": 2
+    },
+    {
+      "name": "WATCHES",
+      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcat-img-3.jpg?alt=media&token=605e3b8b-6826-47e1-8897-5485bf533e54",
+      "id": 3
+    },
+    {
+      "name": "ELECTRONICS",
+      "image": "https://firebasestorage.googleapis.com/v0/b/typescript-ec8ed.appspot.com/o/categoriesImage%2Fcat-img-4.jpg?alt=media&token=f19e92ab-f884-4d05-af4d-b3e83e1bc317",
+      "id": 4
     }
   ]
 }

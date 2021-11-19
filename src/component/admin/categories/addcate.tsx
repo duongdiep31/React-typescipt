@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import '../../../firebase/firebase.config'
 import{getStorage, ref, uploadBytesResumable, uploadBytes, getDownloadURL } from "@firebase/storage"
 type FormValues = {
-  id: any
+  id:  any
   name: string;
   image: string;
 };
@@ -49,7 +49,10 @@ type Props = {
 
 
     const onSubmit: SubmitHandler<FormValues> = (category) => {
+      
                 category.image = data
+             console.log(category);
+
                 props.onAddcate(category)    
       navigate("/admin/category" , {replace:true})
     };
