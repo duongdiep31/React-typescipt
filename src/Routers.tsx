@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Website from "./layout/website";
 import Cart from "./page/cart";
@@ -13,6 +13,8 @@ import Changecate from "./component/admin/categories/changecate";
 import ListAdminprd from "./component/admin/products/adminprd";
 import Addprd from "./component/admin/products/addproduct";
 import Changeprd from "./component/admin/products/changeprd";
+import Signup from "./feature/signup";
+import Signin from "./feature/signin";
 type Props = {
     products: IProduct[]
     categories: ICategory[]
@@ -27,12 +29,18 @@ const Routers: React.FC<Props> = (props) => {
     
     return (
        <BrowserRouter>
+       <Suspense fallback= {<h1>loadingg......</h1>} >
        <Routes>
             <Route path ='/'  element={<Website  />}  >
                                                                 <Route index element= {<Homepage {...props} />} />
                                                                 <Route path='/shop' element= {<Shop {...props} />} />
                                                                 <Route path='/cart' element= {<Cart/>} />
-                                                                <Route path='/admin/'  element={<Homeadmin {...props} />} >
+                                                                <Route  path ='/signup' element ={<Signup/>} />
+                                                                <Route  path= '/signin' element={<Signin />} />
+                                                                <Route path='/admin/'  element={
+
+                                                                <Homeadmin {...props} />
+                                                                } >
                                                                         <Route index element={ <Info {...props} />} />
                                                                         <Route path='category' element = {<ListCategories {...props} />}/>
                                                                         <Route  path='addcategory' element = {<Addcate onAddcate = {props.onAddcate} />} />
@@ -48,7 +56,7 @@ const Routers: React.FC<Props> = (props) => {
 
 
             </Routes>
-
+                </Suspense>
        </BrowserRouter>
     )
 }

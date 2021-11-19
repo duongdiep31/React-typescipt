@@ -6,7 +6,6 @@ type Props = {
   products: IProduct[]
 }
 const Trending: React.FC<Props> = (props) => {
-  console.log(props);
   
     return (
         <section className="py-5">

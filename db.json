@@ -35,5 +35,22 @@
       "price": "260000002",
       "description": "dsd"
     }
+  ],
+  "users": [
+    {
+      "email": "diep234@gmail.com",
+      "password": "$2a$10$//uyh5SCC0iFyik551.R6en4sG0AqT/mPWdbXEQZalPjwiKfIqxNC",
+      "id": 1
+    },
+    {
+      "email": "skyzenky@gmail.com",
+      "password": "$2a$10$rPyHOD3rD4Giwvxf2NbaeeKwOs0H6tTz.IW/qI/UO/B1NgE8EOBCq",
+      "id": 2
+    },
+    {
+      "email": "dsdsdsd@gmail.com",
+      "password": "$2a$10$ph17T4ZB1FO250Yo5Qe95OK18VAGec44DeCoS4KoDvcWGJZH8ae9m",
+      "id": 3
+    }
   ]
 }

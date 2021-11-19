@@ -27,7 +27,7 @@ const Header = () => {
         <ul className="navbar-nav ml-auto">               
           <li className="nav-item"><Link className="nav-link" to="/cart"> <i className="fas fa-dolly-flatbed mr-1 text-gray" />Cart<small className="text-gray">(2)</small></Link></li>
           <li className="nav-item"><Link className="nav-link" to="#"> <i className="far fa-heart mr-1" /><small className="text-gray"> (0)</small></Link></li>
-          <li className="nav-item"><Link className="nav-link" to="#"> <i className="fas fa-user-alt mr-1 text-gray" />Login</Link></li>
+          <li className="nav-item"><Link className="nav-link" to="/signin"> <i className="fas fa-user-alt mr-1 text-gray" />Login</Link></li>
         </ul>
       </div>
     </nav>

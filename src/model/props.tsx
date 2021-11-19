@@ -10,10 +10,8 @@ export interface IProduct {
     name: string;
     image: string;
   }
-export interface Add {
-    id: Number;
-    name: String;
-    image: String;
-    price: Number;
-}
+export interface Auth {
+    email: String;
+    password: any
+  }
   

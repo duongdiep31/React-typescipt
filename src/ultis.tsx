@@ -1,0 +1,9 @@
+import React from "react";
+// export const authenticate = (user:any) => {
+//     localStorage.setItem("user", JSON.stringify(user))
+// }
+// export const isAuthenticate = () => {
+//     if (localStorage.getItem('user')) {
+//             return JSON.parse(localStorage.getItem('user'))
+//     }
+// }
