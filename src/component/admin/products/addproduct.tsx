@@ -66,12 +66,12 @@ const Addprd: React.FC<Props> = (props) => {
          <div className="form-group">
            <label htmlFor="name">Name</label>
            <input {...register('name', {required:true})}  className="form-control" id="name" type="text" placeholder="Name Product" />
-           {/* {errors?.name && <p>{errors.name}</p>} */}
+           {errors?.name && <p>{errors.name}</p>}
          </div>
          <div className="form-group">
            <label htmlFor="price">Price</label>
            <input {...register('price', {required:true})}   className="form-control" id="price" type="text" placeholder="Price Product" />
-           {/* {errors?.name && <p>{errors.name}</p>} */}
+           {errors?.name && <p>{errors.name}</p>}
          </div>
          <div className="form-group">
            <label htmlFor="description">Description</label>

@@ -22,7 +22,7 @@ const Signup = () => {
                                     toast.success('Đăng kí thành công') 
                                     navigate("/signin", {replace:true})
                                 }
-                                 ).catch((error) => toast.error(error.response.data))
+                                 ).catch((error) => toast.error(error.response))
                     }
 
 

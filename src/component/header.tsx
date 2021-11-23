@@ -1,7 +1,43 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import { Link } from "react-router-dom"
+import { isAuthenticate } from "../ultis"
+import { useNavigate } from "react-router";
+
 const Header = () => {
+  const user = isAuthenticate()
+  console.log(user);
+  const navigate = useNavigate()
+  
+  const button = () => {
+
+
+        if (user) {
+          return <button
+                onClick= {() => {console.log(window);
+                
+                        if (typeof window != "undefined") {
+                          localStorage.removeItem('user');
+                              navigate("/", {replace:true} )
+                        }
+
+
+                }} 
+          
+          style={{
+                background: 'white',
+                border: 'none'
+
+          }} className="nav-link"   >  <i className="   mr-1 text-gray   fas fa-power-off"/>   Logout</button>
+
+
+
+          
+        }else{
+          return (<Link className="nav-link" to="/signin"> <i className="fas fa-user-alt mr-1 text-gray" />Login</Link>)
+
+        }
+  }
     return (
         <React.Fragment>
                 
@@ -27,7 +63,7 @@ const Header = () => {
         <ul className="navbar-nav ml-auto">               
           <li className="nav-item"><Link className="nav-link" to="/cart"> <i className="fas fa-dolly-flatbed mr-1 text-gray" />Cart<small className="text-gray">(2)</small></Link></li>
           <li className="nav-item"><Link className="nav-link" to="#"> <i className="far fa-heart mr-1" /><small className="text-gray"> (0)</small></Link></li>
-          <li className="nav-item"><Link className="nav-link" to="/signin"> <i className="fas fa-user-alt mr-1 text-gray" />Login</Link></li>
+          <li className="nav-item">{  button()   }</li>
         </ul>
       </div>
     </nav>
