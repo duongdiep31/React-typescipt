@@ -7,7 +7,8 @@ import { toast } from "react-toastify";
 import { signin } from "../api/auth";
 import { authenticate, isAuthenticate } from "../ultis";
 type FormValues = {
-    id: any,
+    id: any
+    name:string
     email: string
     password: string
 }
@@ -33,6 +34,8 @@ const Signin =  () => {
     const user =  isAuthenticate()
     
     const onSubmit: SubmitHandler<FormValues> = (data) => {
+        console.log(data);
+        
         signin(data)
             .then(response => {
 

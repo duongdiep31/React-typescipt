@@ -11,6 +11,7 @@ export interface IProduct {
     image: string;
   }
 export interface Auth {
+    name: string
     email: String;
     password: any
   }

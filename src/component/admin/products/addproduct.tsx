@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {useForm, Resolver, SubmitHandler} from 'react-hook-form'
 import { useNavigate } from "react-router";
 import '../../../firebase/firebase.config'
 import{getStorage, ref, uploadBytesResumable, uploadBytes, getDownloadURL } from "@firebase/storage"
+import { ICategory } from "../../../model/props";
 
 type FormValues = {
     id: any
@@ -13,6 +14,7 @@ type FormValues = {
   };
   type Props = {
       onAddprd:(product: FormValues) => void
+      categories: ICategory[]
   }
 
 
@@ -30,10 +32,23 @@ type FormValues = {
     };
   };
 const Addprd: React.FC<Props> = (props) => {
+  
     const {register, handleSubmit, formState: { errors }} = useForm<FormValues>({ resolver });
             const navigate = useNavigate();
-            const [data, setdata] = useState('')
-
+            const [data, setdata] = useState('')     
+            const categories = props.categories
+            const op = categories.map((item,index) => {
+              
+              return(
+                <React.Fragment
+                key={index}
+                >    
+                 <option >
+                  {item.name}
+                </option></React.Fragment>
+           
+              )
+            })             
             const handleImage = (url: any) => {
                 
                     const storage = getStorage();  
@@ -76,6 +91,13 @@ const Addprd: React.FC<Props> = (props) => {
          <div className="form-group">
            <label htmlFor="description">Description</label>
            <textarea  {...register('description', {required:true})}  className="form-control" id="description" placeholder="Description Product" />
+           {/* {errors?.name && <p>{errors.name}</p>} */}
+         </div>
+         <div className="form-group">
+           <label htmlFor="category">Category</label>
+           <select name="category" id="category">
+                  {op}
+           </select>
            {/* {errors?.name && <p>{errors.name}</p>} */}
          </div>
          <div className="form-group">

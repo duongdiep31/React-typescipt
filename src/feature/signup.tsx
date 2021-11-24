@@ -6,6 +6,7 @@ import { signup } from "../api/auth";
 import "react-toastify/dist/ReactToastify.css";
 
 type FormValues = {
+    name: string
     email: string
     password: string
 }
@@ -34,6 +35,12 @@ const Signup = () => {
                 <div className="card-body">
                     <div className='container'>
                     <form onSubmit={handleSubmit(onSubmit)} >
+                    <div className="form-group row">
+                            <label className="col-sm-2 col-form-label" htmlFor="name">Name</label>
+                            <div className="col-sm-10">
+                                <input {...register('name', {required: true})} className="form-control" id="inputEmail3" type="text" placeholder="Email" />
+                            </div>
+                        </div>
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label" htmlFor="inputEmail3">Email</label>
                             <div className="col-sm-10">
