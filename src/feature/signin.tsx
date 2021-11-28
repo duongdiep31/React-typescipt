@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import  { useState } from "react"
 import GoogleLogin from "react-google-login";
 import { Resolver, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
@@ -30,12 +30,9 @@ const Signin =  () => {
     const { register, handleSubmit } = useForm<FormValues>({ resolver });
     const navigate = useNavigate();
     const [redirectTo, setRedirecTo] = useState(false);
-    const [google,setgoogle] = useState(false)
     const user =  isAuthenticate()
     
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        console.log(data);
-        
         signin(data)
             .then(response => {
 
@@ -51,7 +48,6 @@ const Signin =  () => {
 
     const logingg = () => {
         const responseGoogle = (response: any) => {
-            setgoogle(true)
             authenticate(response.profileObj)
             navigate('/', {replace:true})
         }

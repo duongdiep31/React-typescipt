@@ -1,7 +1,6 @@
-import React from "react"
-import { Resolver, SubmitHandler, useForm } from "react-hook-form";
+import {  SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { signup } from "../api/auth";
 import "react-toastify/dist/ReactToastify.css";
 

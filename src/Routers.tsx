@@ -42,11 +42,11 @@ const Routers: React.FC<Props> = (props) => {
                 <Homeadmin {...props} />
                 } >
                         <Route index element={ <Info {...props} />} />
-                        <Route path='category' element = {<ListCategories {...props} />}/>
+                        <Route path='category' element = {<ListCategories />}/>
                         <Route  path='addcategory' element = {<Addcate onAddcate = {props.onAddcate} />} />
                         <Route  path ='changecate/:id' element = {<Changecate onChangecate = {props.onChangecate}  />} /> 
-                        <Route  path ='products' element= {<ListAdminprd {...props}  />} />
-                        <Route  path ='Addproduct' element= {<Addprd {...props}  />} />
+                        <Route  path ='products' element= {<ListAdminprd   />} />
+                        <Route  path ='Addproduct' element= {<Addprd />} />
                         <Route  path ='Changeprd/:id'  element={<Changeprd onChangeprd={props.onChangeprd} />} />
                 </Route>
             </Route>

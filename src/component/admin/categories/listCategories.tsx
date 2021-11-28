@@ -1,15 +1,21 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Link, NavLink } from "react-router-dom"
-import { ICategory } from '../../../model/props'
+import { Rootstate } from "../../../Store"
+import { itemCate } from "../../../Store/action/categoriesAction"
 
- type Props = {
-     categories: ICategory[]
-     onRemove : (id:Number) => void
- }
-const ListCategories: React.FC<Props> = (props ) => {
-                
-        const Result = props.categories.map((item ,index ) => {
-                
+const ListCategories = ( ) => {
+  const dispatch = useDispatch()
+  const category = useSelector((state: Rootstate) => state.category.category)
+  useEffect(() => {
+    dispatch(itemCate())
+  },[dispatch])
+          
+
+
+        const Result = category.map((item ,index ) => {
+                  console.log(item)
+                  
             return(
               <React.Fragment key ={index} > 
                   
@@ -18,10 +24,10 @@ const ListCategories: React.FC<Props> = (props ) => {
               <td>{item.name}</td>
               <td style ={{width:'20%', height:'20%'}} >
                 <img src ={item.image} alt= {'...'} style ={{width: '100%',height: '20%'}} /></td>
-              <td><Link style={{borderRadius: "20px"}} to={`/admin/changecate/${item.id}`}id="change" className="btn btn-success shadow btn-xs sharp mr-1" >
+              <td><Link style={{borderRadius: "20px"}} to={`/admin/changecate/${item._id}`}id="change" className="btn btn-success shadow btn-xs sharp mr-1" >
                   <i className="fas fa-pencil-alt"></i></Link>
                 <button
-                    onClick={() => props.onRemove(item.id)}
+                    // onClick={() => props.onRemove(item.id)}
                   style={{
                     borderRadius: '20px',
                     backgroundColor: '#AA0000'

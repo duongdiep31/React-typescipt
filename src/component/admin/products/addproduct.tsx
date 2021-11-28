@@ -3,21 +3,19 @@ import {useForm, Resolver, SubmitHandler} from 'react-hook-form'
 import { useNavigate } from "react-router";
 import '../../../firebase/firebase.config'
 import{getStorage, ref, uploadBytesResumable, uploadBytes, getDownloadURL } from "@firebase/storage"
-import { ICategory } from "../../../model/props";
+import { useDispatch, useSelector } from "react-redux";
+import { createPrd } from "../../../Store/action/productsAction";
+import { itemCate } from "../../../Store/action/categoriesAction";
+import { Rootstate } from "../../../Store";
 
 type FormValues = {
     id: any
     name: string;
     image: string;
     price: number
+    category: number
     description: string;
   };
-  type Props = {
-      onAddprd:(product: FormValues) => void
-      categories: ICategory[]
-  }
-
-
   const resolver: Resolver<FormValues> = async (values) => {
     return {
       values: values.name ? values : {},
@@ -31,19 +29,29 @@ type FormValues = {
         : {}
     };
   };
-const Addprd: React.FC<Props> = (props) => {
-  
-    const {register, handleSubmit, formState: { errors }} = useForm<FormValues>({ resolver });
+const Addprd = () => {
+         const dispatch = useDispatch()
+          const category = useSelector((state: Rootstate) => state.category.category)
+          
+          useEffect(() => {
+            dispatch(itemCate())
+          },[dispatch])
+         
+       const {register, handleSubmit, formState: { errors }} = useForm<FormValues>({ resolver });
             const navigate = useNavigate();
             const [data, setdata] = useState('')     
-            const categories = props.categories
-            const op = categories.map((item,index) => {
+       
+
+
+            
+            const op = category.map((item,index) => {
+
               
               return(
                 <React.Fragment
                 key={index}
                 >    
-                 <option >
+                 <option value= {item._id} >
                   {item.name}
                 </option></React.Fragment>
            
@@ -64,10 +72,11 @@ const Addprd: React.FC<Props> = (props) => {
                     } ) 
 
             }
-
             const onSubmit: SubmitHandler<FormValues> = (product) => {
                             product.image = data
-                            props.onAddprd(product)
+                            console.log('add', product);
+                            
+                            dispatch(createPrd(product))
                             navigate('/admin/products', {replace:true}   )
             }
 
@@ -95,7 +104,7 @@ const Addprd: React.FC<Props> = (props) => {
          </div>
          <div className="form-group">
            <label htmlFor="category">Category</label>
-           <select name="category" id="category">
+           <select {...register('category', {required:true})} name="category" id="category">
                   {op}
            </select>
            {/* {errors?.name && <p>{errors.name}</p>} */}

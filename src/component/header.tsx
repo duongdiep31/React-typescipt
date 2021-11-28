@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { NavLink } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { isAuthenticate } from "../ultis"
@@ -6,7 +6,6 @@ import { useNavigate } from "react-router";
 
 const Header = () => {
   const user = isAuthenticate()
-  console.log(user);
   const navigate = useNavigate()
   const button = () => {
     if (user) {
